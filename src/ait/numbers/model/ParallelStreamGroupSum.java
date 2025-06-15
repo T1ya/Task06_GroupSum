@@ -11,7 +11,6 @@ public class ParallelStreamGroupSum extends GroupSum{
 
     @Override
     public int computeSum() {
-        // TODO * ParallelStreamGroupSum, use parallel stream
         return Arrays.stream(numberGroups).parallel().mapToInt(group -> {
             OneGroupSum task = new OneGroupSum(group);
             task.run();
